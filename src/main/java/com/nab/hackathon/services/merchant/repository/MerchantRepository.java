@@ -1,10 +1,8 @@
 package com.nab.hackathon.services.merchant.repository;
 
+import com.nab.hackathon.services.merchant.entity.Merchant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- * Created by pasapicella on 4/20/17.
- */
-public interface MerchantRepository extends JpaRepository <com.nab.hackathon.services.merchant.entity.Merchant, Long> {
+public interface MerchantRepository extends JpaRepository<Merchant, Long> {
 
 }

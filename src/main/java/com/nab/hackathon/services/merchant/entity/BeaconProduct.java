@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class BeaconProduct {
 
   @Embeddable
-  class BeaconProductId implements Serializable {
+  public static class BeaconProductId implements Serializable {
 
     private Long productId;
 
