@@ -3,6 +3,7 @@ package com.nab.hackathon.services.merchant.rest;
 import com.nab.hackathon.services.merchant.entity.Merchant;
 import com.nab.hackathon.services.merchant.repository.MerchantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,13 +33,12 @@ public class MerchantRest {
   }
 
   @RequestMapping(method = POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-  public Merchant create(Merchant merchant) {
-    merchantRepository.save(merchant);
-    return merchant;
+  public Merchant create(@RequestBody Merchant merchant) {
+    return merchantRepository.save(merchant);
   }
 
-  @RequestMapping(value = "all", method = DELETE)
-  public void delete(Long merchantId) {
+  @RequestMapping(value = "/{merchantId}", method = DELETE)
+  public void delete(@PathParam("merchantId") Long merchantId) {
     merchantRepository.delete(merchantId);
   }
 

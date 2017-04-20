@@ -19,11 +19,6 @@ public class Merchant {
   public Merchant() {
   }
 
-  public Merchant(String merchantName, Long merchantId) {
-    this.name = merchantName;
-    this.merchantId = merchantId;
-  }
-
   public Long getMerchantId() {
     return merchantId;
   }
@@ -44,7 +39,7 @@ public class Merchant {
     return logo;
   }
 
-  public void setMerchantLogo() {
+  public void setLogo(String logo) {
     this.logo = logo;
   }
 
