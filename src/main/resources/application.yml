@@ -1,10 +1,13 @@
+server:
+  port: 8081
+
 spring:
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost/apples?useSSL=false
-    password: pas
-    username: pas
+    url: jdbc:mysql://localhost/merchant?useSSL=false
+    password: merchant
+    username: merchant
     driver-class-name: com.mysql.jdbc.Driver

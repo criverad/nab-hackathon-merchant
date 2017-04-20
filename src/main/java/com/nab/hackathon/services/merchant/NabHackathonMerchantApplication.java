@@ -1,4 +1,4 @@
-package com.nab.hackathon.services.beacon;
+package com.nab.hackathon.services.merchant;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NabHackathonMerchantApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(com.nab.hackathon.services.beacon.NabHackathonMerchantApplication.class, args);
+		SpringApplication.run(com.nab.hackathon.services.merchant.NabHackathonMerchantApplication.class, args);
 	}
 }

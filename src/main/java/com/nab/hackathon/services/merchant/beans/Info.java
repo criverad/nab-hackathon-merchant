@@ -1,4 +1,4 @@
-package com.nab.hackathon.services.beacon.beans;
+package com.nab.hackathon.services.merchant.beans;
 
 public class Info
 {

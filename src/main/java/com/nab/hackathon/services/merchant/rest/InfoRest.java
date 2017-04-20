@@ -1,6 +1,6 @@
-package com.nab.hackathon.services.beacon.rest;
+package com.nab.hackathon.services.merchant.rest;
 
-import com.nab.hackathon.services.beacon.beans.Info;
+import com.nab.hackathon.services.merchant.beans.Info;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.http.MediaType;
@@ -20,7 +20,7 @@ public class InfoRest
     public Info about()
     {
         logger.info("Invoking /api/about RESTful method");
-        Info info = new Info("beacon spring boot service", "1.0");
+        Info info = new Info("merchant spring boot service", "1.0");
 
         return info;
     }

@@ -1,4 +1,4 @@
-package com.nab.hackathon.services.beacon.entity;
+package com.nab.hackathon.services.merchant.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,34 +10,17 @@ public class Merchant
 {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private Long beaconId;
-
-    private String beaconName;
     private Long merchantId;
+
+    private String merchantName;
 
     public Merchant()
     {
     }
 
-    public Merchant(String beaconName, Long merchantId) {
-        this.beaconName = beaconName;
+    public Merchant(String merchantName, Long merchantId) {
+        this.merchantName = merchantName;
         this.merchantId = merchantId;
-    }
-
-    public Long getBeaconId() {
-        return beaconId;
-    }
-
-    public void setBeaconId(Long beaconId) {
-        this.beaconId = beaconId;
-    }
-
-    public String getBeaconName() {
-        return beaconName;
-    }
-
-    public void setBeaconName(String beaconName) {
-        this.beaconName = beaconName;
     }
 
     public Long getMerchantId() {
@@ -48,12 +31,19 @@ public class Merchant
         this.merchantId = merchantId;
     }
 
+    public String getMerchantName() {
+        return merchantName;
+    }
+
+    public void setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
+    }
+
     @Override
     public String toString() {
         return "Merchant{" +
-                "beaconId=" + beaconId +
-                ", beaconName='" + beaconName + '\'' +
-                ", merchantId=" + merchantId +
+                "merchantId=" + merchantId +
+                ", merchantName='" + merchantName + '\'' +
                 '}';
     }
 }
