@@ -6,44 +6,54 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Merchant
-{
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Long merchantId;
+public class Merchant {
 
-    private String merchantName;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long merchantId;
 
-    public Merchant()
-    {
-    }
+  private String name;
 
-    public Merchant(String merchantName, Long merchantId) {
-        this.merchantName = merchantName;
-        this.merchantId = merchantId;
-    }
+  private String logo;
 
-    public Long getMerchantId() {
-        return merchantId;
-    }
+  public Merchant() {
+  }
 
-    public void setMerchantId(Long merchantId) {
-        this.merchantId = merchantId;
-    }
+  public Merchant(String merchantName, Long merchantId) {
+    this.name = merchantName;
+    this.merchantId = merchantId;
+  }
 
-    public String getMerchantName() {
-        return merchantName;
-    }
+  public Long getMerchantId() {
+    return merchantId;
+  }
 
-    public void setMerchantName(String merchantName) {
-        this.merchantName = merchantName;
-    }
+  public void setMerchantId(Long merchantId) {
+    this.merchantId = merchantId;
+  }
 
-    @Override
-    public String toString() {
-        return "Merchant{" +
-                "merchantId=" + merchantId +
-                ", merchantName='" + merchantName + '\'' +
-                '}';
-    }
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getLogo() {
+    return logo;
+  }
+
+  public void setMerchantLogo() {
+    this.logo = logo;
+  }
+
+  @Override
+  public String toString() {
+    return "Merchant{" +
+        "merchantId=" + merchantId +
+        ", name='" + name + '\'' +
+        ", logo='" + logo + '\'' +
+        '}';
+  }
 }
