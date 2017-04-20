@@ -3,6 +3,7 @@ package com.nab.hackathon.services.merchant.rest;
 import com.nab.hackathon.services.merchant.entity.Merchant;
 import com.nab.hackathon.services.merchant.repository.MerchantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/merchant")
 public class MerchantRest {
