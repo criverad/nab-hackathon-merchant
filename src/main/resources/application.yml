@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost/apples?useSSL=false
+    password: pas
+    username: pas
+    driver-class-name: com.mysql.jdbc.Driver
