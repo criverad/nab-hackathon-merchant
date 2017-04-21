@@ -89,3 +89,15 @@ with body:
 - Delete beacon from product
 
 ```DELETE /product/{productId}/beacon/{beaconId}```
+
+# Environment Setup
+
+## MySQL
+
+Local database needs to be setup by running the following SQL statements:
+
+```
+CREATE DATABASE merchant;
+CREATE USER 'merchant'@'localhost' IDENTIFIED BY 'merchant';
+GRANT ALL PRIVILEGES ON *.* TO 'merchant'@'localhost' WITH GRANT OPTION;
+```
