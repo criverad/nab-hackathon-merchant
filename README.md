@@ -75,9 +75,9 @@ with body:
 
 ```
 {
-    "beaconId": {
+    "beaconProductId": {
         "productId": 1,
-        "beaconId": 2
+        "beaconId": "beacon-w"
     }
 }
 ```
