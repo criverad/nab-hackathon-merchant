@@ -55,7 +55,7 @@ public class ProductRest {
   }
 
   @RequestMapping(value = "/{productId}/beacon/{beaconId}", method = DELETE)
-  public void delete(@PathVariable("productId") Long productId, @PathVariable Long beaconId) {
+  public void delete(@PathVariable("productId") Long productId, @PathVariable String beaconId) {
     BeaconProduct.BeaconProductId beaconProductId = new BeaconProduct.BeaconProductId();
     beaconProductId.setProductId(productId);
     beaconProductId.setBeaconId(beaconId);
