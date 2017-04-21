@@ -1,5 +1,7 @@
 package com.nab.hackathon.services.merchant.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -7,6 +9,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
+
+import static com.nab.hackathon.services.merchant.Constants.JSON_UTC_DATE_FORMAT;
 
 @Entity
 public class CustomerRegistration {
@@ -67,9 +71,11 @@ public class CustomerRegistration {
   @EmbeddedId
   private CustomerRegistrationId customerRegistrationId;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = JSON_UTC_DATE_FORMAT)
   @Temporal(TemporalType.TIMESTAMP)
   private Date checkIn;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = JSON_UTC_DATE_FORMAT)
   @Temporal(TemporalType.TIMESTAMP)
   private Date checkOut;
 
