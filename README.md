@@ -68,7 +68,7 @@ with body:
 
 - Add product to beacon
 
-```POST /beacon```
+```POST /product/beacon```
 
 with body:
 
