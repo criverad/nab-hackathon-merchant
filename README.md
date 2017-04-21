@@ -90,6 +90,51 @@ with body:
 
 ```DELETE /product/{productId}/beacon/{beaconId}```
 
+## Payment
+
+- Get all payments
+
+```GET /payment```
+
+- Get payment by payment ID
+
+```GET /payment/{paymentId}```
+
+- Get payments by merchant ID
+
+```GET /payment/merchant/{merchantId}```
+
+- Get payments by beacon ID
+
+```GET /payment/beacon/{beaconId}```
+
+- Get payments by customer ID
+
+```GET /payment/customer/{customerId}```
+
+- Create/update payment
+
+```POST /payment```
+
+with body:
+
+```
+{
+    "paymentId": 1, // this is only required for payment updates
+	"amount": 0.5,
+	"description": "payment description",
+	"date": "2012-04-23T18:25:43.511Z",
+	"outcome": "SUCCESS",
+	"beaconId": "beacon-id-1",
+	"customerId": 1,
+	"merchantId": 2
+}
+```
+
+- Delete payment
+
+```DELETE /payment/{paymentId}```
+
 # Environment Setup
 
 ## MySQL
