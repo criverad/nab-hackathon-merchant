@@ -1,5 +1,9 @@
 # API
 
+Pivotal Cloud Foundry End point as follows FOR MERCHANT API
+
+```http://nabhackathon-merchant.cfapps.io```
+
 ## Merchant
 
 - Get all merchants
