@@ -2,3 +2,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+
+services:
+  notificationService:
+    baseUri: http://nabhackathon-notifications.cfapps.io
+    notifyPath: /notify

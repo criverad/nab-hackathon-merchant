@@ -1,5 +1,6 @@
 package com.nab.hackathon.services.merchant.rest;
 
+import com.nab.hackathon.services.merchant.client.NotificationServiceClient;
 import com.nab.hackathon.services.merchant.entity.Payment;
 import com.nab.hackathon.services.merchant.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -23,6 +25,9 @@ public class PaymentRest {
 
   @Autowired
   private PaymentRepository paymentRepository;
+
+  @Autowired
+  private NotificationServiceClient notificationServiceClient;
 
   @RequestMapping(value = "all", method = GET, produces = APPLICATION_JSON_VALUE)
   public List<Payment> all() {
@@ -51,7 +56,16 @@ public class PaymentRest {
 
   @RequestMapping(method = POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
   public Payment create(@RequestBody Payment payment) {
-    return paymentRepository.save(payment);
+    boolean isPaymentRequest = payment.getPaymentId() != null && payment.getPaymentId() >= 1L;
+    boolean shouldSendNotification = isPaymentRequest && isNotBlank(payment.getBeaconId());
+
+    Payment savedPayment = paymentRepository.save(payment);
+
+    if (shouldSendNotification) {
+      notificationServiceClient.sendNotification("/topic/beacon/" + payment.getBeaconId(), "Congratulations!!", "Payment successful");
+    }
+
+    return savedPayment;
   }
 
   @RequestMapping(value = "/{paymentId}", method = DELETE)

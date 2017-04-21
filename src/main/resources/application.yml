@@ -11,3 +11,8 @@ spring:
     password: merchant
     username: merchant
     driver-class-name: com.mysql.jdbc.Driver
+
+services:
+  notificationService:
+    baseUri: http://nabhackathon-notifications.cfapps.io
+    notifyPath: /notify
