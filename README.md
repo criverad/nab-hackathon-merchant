@@ -135,6 +135,34 @@ with body:
 
 ```DELETE /payment/{paymentId}```
 
+## Customer
+
+- Get all customer
+
+```GET /customer```
+
+- Get customer by customer ID
+
+```GET /customer/{customerId}```
+
+- Create/update customer
+
+```POST /customer```
+
+with body:
+
+```
+{
+    "customerId": 1, // this is only required for customer updates
+	"image": "customer image",
+	"name": "customer name"
+}
+```
+
+- Delete customer
+
+```DELETE /customer/{customerId}```
+
 # Environment Setup
 
 ## MySQL
