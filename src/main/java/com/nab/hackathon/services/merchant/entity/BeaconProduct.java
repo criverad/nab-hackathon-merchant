@@ -13,7 +13,7 @@ public class BeaconProduct {
 
     private Long productId;
 
-    private Long beaconId;
+    private String beaconId;
 
     public BeaconProductId() {
     }
@@ -26,11 +26,11 @@ public class BeaconProduct {
       this.productId = productId;
     }
 
-    public Long getBeaconId() {
+    public String getBeaconId() {
       return beaconId;
     }
 
-    public void setBeaconId(Long beaconId) {
+    public void setBeaconId(String beaconId) {
       this.beaconId = beaconId;
     }
 

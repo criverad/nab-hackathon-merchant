@@ -14,18 +14,18 @@ public class CustomerRegistration {
   @Embeddable
   class CustomerRegistrationId implements Serializable {
 
-    private Long beaconId;
+    private String beaconId;
 
     private Long customerId;
 
     public CustomerRegistrationId() {
     }
 
-    public Long getBeaconId() {
+    public String getBeaconId() {
       return beaconId;
     }
 
-    public void setBeaconId(Long beaconId) {
+    public void setBeaconId(String beaconId) {
       this.beaconId = beaconId;
     }
 

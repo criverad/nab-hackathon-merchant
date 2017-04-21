@@ -24,7 +24,7 @@ public class Payment {
 
   private String outcome;
 
-  private Long beaconId;
+  private String beaconId;
 
   private Long customerId;
 
@@ -70,11 +70,11 @@ public class Payment {
     this.outcome = outcome;
   }
 
-  public Long getBeaconId() {
+  public String getBeaconId() {
     return beaconId;
   }
 
-  public void setBeaconId(Long beaconId) {
+  public void setBeaconId(String beaconId) {
     this.beaconId = beaconId;
   }
 
