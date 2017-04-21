@@ -8,7 +8,7 @@ Pivotal Cloud Foundry End point as follows FOR MERCHANT API
 
 - Get all merchants
 
-```GET /merchant```
+```GET /merchant/all```
 
 - Get merchant by merchant ID
 
@@ -24,8 +24,7 @@ with body:
 {
     "merchantId": 3, // this is mandatory only when updating an existing merchant
 	"name": "product x",
-	"image": "image x",
-	"price": 3.4
+	"logo": "logo y",
 }
 ```
 
@@ -69,7 +68,7 @@ with body:
 
 - Add product to beacon
 
-```POST /product/beacon```
+```POST /beacon```
 
 with body:
 
