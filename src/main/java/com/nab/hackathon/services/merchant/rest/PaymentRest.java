@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -57,12 +56,13 @@ public class PaymentRest {
   @RequestMapping(method = POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
   public Payment create(@RequestBody Payment payment) {
     boolean isPaymentRequest = payment.getPaymentId() != null && payment.getPaymentId() >= 1L;
-    boolean shouldSendNotification = isPaymentRequest && isNotBlank(payment.getBeaconId());
 
     Payment savedPayment = paymentRepository.save(payment);
 
-    if (shouldSendNotification) {
-      notificationServiceClient.sendNotification("/topic/beacon/" + payment.getBeaconId(), "Congratulations!!", "Payment successful");
+    if (isPaymentRequest) {
+      notificationServiceClient.sendPaymentNotificationToMerchant(payment);
+    } else {
+      notificationServiceClient.sendPaymentNotificationToUser(payment);
     }
 
     return savedPayment;
